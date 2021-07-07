@@ -30,13 +30,13 @@ function addBookToLibrary(book) {
     myLibrary.push(book)
 }
 
-// const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false)
-// const venmurasu = new Book('Venmurasu', 'Jeyamohan', 22400, true)
-// const chronicle = new Book('A Chronicle of Ancient Sunlight', 'Henry Williamson', 6062, false)
+const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false)
+const venmurasu = new Book('Venmurasu', 'Jeyamohan', 22400, true)
+const chronicle = new Book('A Chronicle of Ancient Sunlight', 'Henry Williamson', 6062, false)
 
-// addBookToLibrary(theHobbit)
-// addBookToLibrary(venmurasu)
-// addBookToLibrary(chronicle)
+addBookToLibrary(theHobbit)
+addBookToLibrary(venmurasu)
+addBookToLibrary(chronicle)
 
 //--------------
 
@@ -52,27 +52,6 @@ const pages = document.querySelector('#pages')
 const isRead = document.querySelector('#isRead')
 let index = 0
 
-function createTable() {
-    const table = document.createElement('table')
-
-    const row = document.createElement('tr')
-
-    const bookName = document.createElement('th')
-    bookName.textContent = "Book"
-    row.appendChild(bookName)
-
-    const authorName = document.createElement('th')
-    authorName.textContent = "Author"
-    row.appendChild(authorName)
-
-
-    table.appendChild(row)
-
-    document.body.appendChild(table)
-    console.log(document.body)
-
-}
-
 function createRow(book) {
     const row = document.createElement('tr')
     row.dataset.index = index
@@ -84,7 +63,7 @@ function createRow(book) {
     })
 
     const button = document.createElement('button')
-    button.textContent = 'button'
+    button.textContent = 'Delete'
     button.dataset.index = index
     button.classList.add('delete')
     row.appendChild(button)
@@ -97,6 +76,8 @@ function createBook() {
     const book = new Book(title.value, author.value, pages.value, isRead.checked)
     return book
 }
+
+//--------------
 
 myLibrary.forEach(book => {
     table.appendChild(createRow(book))
@@ -128,14 +109,12 @@ buttons.forEach(button => {
             table.removeChild(table.firstChild)
         }
 
+        index = 0;
+
         myLibrary.forEach(book => {
             table.appendChild(createRow(book))
-        })
-
+        })        
     })
 })
 
-// createTable()
-
-// finish createTable refactor
 // finish delete button and read toggle
