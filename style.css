@@ -10,6 +10,10 @@ html, body {
     justify-content: center;
 }
 
+.table {
+    padding-bottom: 5%;
+}
+
 table {
     border: 2px black solid;
     border-collapse: collapse;
@@ -31,13 +35,6 @@ td {
 
 button {
     text-align: center;
-}
-
-.modal {
-    border: 2px magenta solid;
-    width: 25%;
-    text-align: center;
-    border-radius: 10%;
 }
 
 .hidden {
