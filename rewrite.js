@@ -13,14 +13,14 @@
     }
   }
 
-  const chronicle = Book(
+  const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
+  const venmurasu = new Book("Venmurasu", "Jeyamohan", 22400, true);
+  const chronicle = new Book(
     "A Chronicle of Ancient Sunlight",
     "Henry Williamson",
     6062,
     false
   );
-  const theHobbit = Book("The Hobbit", "J.R.R. Tolkien", 295, false);
-  const venmurasu = Book("Venmurasu", "Jeyamohan", 22400, true);
 
   var library = {
     collection: [chronicle, theHobbit, venmurasu],
