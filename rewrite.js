@@ -1,28 +1,29 @@
 (function () {
-  // class Book {
-  //   constructor(title, author, pages, read) {
-  //     this.title = title;
-  //     this.author = author;
-  //     this.pages = pages;
-  //     this.read = read;
-  //   }
-  //   info() {
-  //     return `${this.title}, ${this.author}, ${this.pages} pages, ${
-  //       this.read ? "read" : "not read yet"
-  //     }`;
-  //   }
-  // }
-  const Book = (title, author, pages, read) => {
-    const info = () => `${this.title}, ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read yet"}`;
-    return {title, author, pages, read}
+  class Book {
+    constructor(title, author, pages, read) {
+      this.title = title;
+      this.author = author;
+      this.pages = pages;
+      this.read = read;
+    }
+    info() {
+      return `${this.title}, ${this.author}, ${this.pages} pages, ${
+        this.read ? "read" : "not read yet"
+      }`;
+    }
   }
 
-  const chronicle = Book('A Chronicle of Ancient Sunlight', 'Henry Williamson', 6062, false)
-  const theHobbit = Book('The Hobbit', 'J.R.R. Tolkien', 295, false)
-  const venmurasu = Book('Venmurasu', 'Jeyamohan', 22400, true)
+  const chronicle = Book(
+    "A Chronicle of Ancient Sunlight",
+    "Henry Williamson",
+    6062,
+    false
+  );
+  const theHobbit = Book("The Hobbit", "J.R.R. Tolkien", 295, false);
+  const venmurasu = Book("Venmurasu", "Jeyamohan", 22400, true);
 
   var library = {
-    collection: [chronicle],
+    collection: [chronicle, theHobbit, venmurasu],
     init: function () {
       this.cacheDom();
       this.render();
