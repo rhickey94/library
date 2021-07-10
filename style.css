@@ -5,13 +5,12 @@ html, body {
 }
 
 .container {
-    /* border: 1px red solid; */
     display: flex;
     justify-content: center;
 }
 
 .table {
-    padding-bottom: 5%;
+    padding: 5% 0;
 }
 
 table {
@@ -21,16 +20,13 @@ table {
     font-size: 12px;
 }
 
-tr {
-    border: 1px purple solid;
-}
-
 th {
-    border: 1px orange solid;
+    border: 1px black solid;
 }
 
 td {
-    border: 1px red solid;
+    border: 1px black solid;
+    text-align: center;
 }
 
 button {
@@ -42,13 +38,18 @@ button {
 }
 
 form {
-    border: 2px blue solid;
+    border: 2px purple dotted;
     padding: 5%;
     border-radius: 5%;
 }
 
 .form-container {
-    /* border: 1px red solid; */
     display: flex;
     justify-content: center;
+}
+
+.delete {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
 }
