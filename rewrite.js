@@ -1,3 +1,5 @@
+"use strict";
+
 (function () {
   class Book {
     constructor(title, author, pages, read) {
