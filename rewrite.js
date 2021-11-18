@@ -26,25 +26,25 @@
 
   var library = {
     collection: [chronicle, theHobbit, venmurasu],
-    init: function () {
+    init() {
       this.cacheDom();
       this.render();
       this.bindEvents();
     },
-    addBook: function (book) {
+    addBook(book) {
       this.collection.push(book);
     },
-    deleteBook: function (index) {
+    deleteBook(index) {
       this.collection.splice(index, 1);
     },
-    changeReadStatus: function (index) {
+    changeReadStatus(index) {
       if (this.collection[index].read) {
         this.collection[index].read = false;
       } else {
         this.collection[index].read = true;
       }
     },
-    cacheDom: function () {
+    cacheDom() {
       this.el = document.querySelector(".library");
       this.addBookButton = this.el.querySelector(".addBookButton");
       this.table = this.el.querySelector(".table");
@@ -57,7 +57,7 @@
       this.readInput = document.querySelector("#isRead");
       this.submitButton = document.querySelector(".submit");
     },
-    createDeleteButton: function (index) {
+    createDeleteButton(index) {
       const deleteTd = document.createElement("td");
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Delete";
@@ -68,7 +68,7 @@
       deleteTd.append(deleteButton);
       return deleteTd;
     },
-    createChangeReadButton: function (index) {
+    createChangeReadButton(index) {
       const readTd = document.createElement("td");
       const readButton = document.createElement("button");
       readButton.textContent = "Change Read Status";
@@ -79,7 +79,7 @@
       readTd.append(readButton);
       return readTd;
     },
-    render: function () {
+    render() {
       this.tableBody.textContent = "";
 
       this.collection.forEach((book, index) => {
@@ -98,12 +98,12 @@
         this.tableBody.append(row);
       });
     },
-    toggleHiddenItems: function () {
+    toggleHiddenItems() {
       this.table.classList.toggle("hidden");
       this.form.classList.toggle("hidden");
       this.addBookButton.classList.toggle("hidden");
     },
-    bindEvents: function () {
+    bindEvents() {
       this.addBookButton.addEventListener(
         "click",
         this.toggleHiddenItems.bind(this)
